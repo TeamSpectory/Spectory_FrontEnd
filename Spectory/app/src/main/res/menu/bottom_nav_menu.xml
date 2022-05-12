@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/home"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="Home"
+        tools:ignore="AlwaysShowAction"/>
+    <item
+        android:id="@+id/archivingFragment"
+        android:icon="@drawable/archiving"
+        app:showAsAction="always"
+        android:title="archiving" />
+    <item
+        android:id="@+id/myprofileFragment"
+        android:icon="@drawable/profile"
+        app:showAsAction="always"
+        android:title="MyProfile" />
+</menu>
