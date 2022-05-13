@@ -14,10 +14,7 @@
         android:layout_marginTop="380dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="224dp"
-        android:background="@drawable/edge_round"
-        android:backgroundTint="@color/white"
-        android:text="LOGIN"
-        android:textColor="#0E4DA4"
+        android:background="@drawable/ic_login_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,7 +91,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.505"
-        app:srcCompat="@drawable/profile" />
+        app:srcCompat="@drawable/ic_id_icon" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -110,7 +107,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.493"
-        app:srcCompat="@drawable/login_pw" />
+        app:srcCompat="@drawable/ic_password_icon" />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -122,9 +119,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/title_icon" />
+        app:srcCompat="@drawable/ic_bookmark" />
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageView10"
         android:layout_width="141dp"
         android:layout_height="36dp"
@@ -134,6 +131,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/spectory" />
+        app:srcCompat="@drawable/ic_bookmark" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
