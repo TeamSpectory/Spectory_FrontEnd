@@ -29,7 +29,7 @@
         android:background="@drawable/white_edge"
         android:fontFamily="@font/coiny"
         android:gravity="center"
-        android:text="기록 작성하기"
+        android:text="기록 수정하기"
         android:textColor="#000000"
         android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -321,6 +321,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="작성" />
+            android:text="수정 완료" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

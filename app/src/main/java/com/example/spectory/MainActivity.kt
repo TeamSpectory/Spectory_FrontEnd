@@ -2,6 +2,7 @@ package com.example.spectory
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import com.example.spectory.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -49,7 +50,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
+    fun fragmentChange(SettingFragment: Fragment){
+        supportFragmentManager.beginTransaction().replace(R.id.main_frm,SettingFragment).commit()
+    }
 
 
 
