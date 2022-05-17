@@ -4,11 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1235" />
+        <entry key="app/src/main/res/drawable/edge_round.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_bookmark.xml" value="0.119" />
+        <entry key="app/src/main/res/drawable/ic_calender.xml" value="0.1445" />
+        <entry key="app/src/main/res/drawable/ic_check_box.xml" value="0.1445" />
         <entry key="app/src/main/res/drawable/ic_create_button.xml" value="0.1235" />
         <entry key="app/src/main/res/drawable/ic_drawer_icon.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_edit.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_edit_box.xml" value="0.1895" />
+        <entry key="app/src/main/res/drawable/ic_folder.xml" value="0.1445" />
+        <entry key="app/src/main/res/drawable/ic_folder_rectangle.xml" value="0.1445" />
         <entry key="app/src/main/res/drawable/ic_id_icon.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.104" />
         <entry key="app/src/main/res/drawable/ic_login_button.xml" value="0.1" />
@@ -17,6 +22,11 @@
         <entry key="app/src/main/res/drawable/ic_name_spectory_.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_password_icon.xml" value="0.1235" />
         <entry key="app/src/main/res/drawable/ic_plus_button.xml" value="0.1235" />
+        <entry key="app/src/main/res/drawable/ic_polygon_4.xml" value="0.1445" />
+        <entry key="app/src/main/res/drawable/ic_rectangle55.xml" value="0.1445" />
+        <entry key="app/src/main/res/drawable/ic_star_2.xml" value="0.1445" />
+        <entry key="app/src/main/res/drawable/ic_tag.xml" value="0.1445" />
+        <entry key="app/src/main/res/drawable/ic_tag_rectangle_38.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_top_bar.xml" value="0.22332672119140629" />
         <entry key="app/src/main/res/layout/activity_edit.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.165" />
@@ -24,7 +34,8 @@
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1400709219858156" />
         <entry key="app/src/main/res/layout/activity_write.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/fragment_archiving.xml" value="0.1400709219858156" />
+        <entry key="app/src/main/res/layout/archiving_list.xml" value="0.3142504297121608" />
+        <entry key="app/src/main/res/layout/fragment_archiving.xml" value="0.27564102564102566" />
         <entry key="app/src/main/res/layout/fragment_editMyprofile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.29082417352962103" />
         <entry key="app/src/main/res/layout/fragment_myprofile.xml" value="0.3268698060941828" />
