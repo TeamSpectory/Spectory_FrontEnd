@@ -49,20 +49,20 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/myprofile_edit_btn"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_marginTop="21dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView5"
+            app:layout_constraintEnd_toStartOf="@+id/myprofile_more_btn"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.6"
-            app:srcCompat="@drawable/ic_edit" />
+            app:srcCompat="@drawable/pencil" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/myprofile_more_btn"
             android:layout_width="13dp"
             android:layout_height="13dp"
             android:layout_marginTop="21dp"

@@ -18,7 +18,16 @@ class SettingFragment : Fragment() {
     ): View? {
         binding = FragmentSettingBinding.inflate(inflater, container, false)
 
+        binding.settingOkBtn.setOnClickListener {
+            changeMyProfileFragment()
+        }
+
         return binding.root
+    }
+
+    private fun changeMyProfileFragment(){
+        (context as MainActivity).supportFragmentManager.beginTransaction()
+            .replace(R.id.main_frm, MyprofileFragment()).commit()
     }
 
 }
