@@ -13,6 +13,21 @@ class WriteActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityWriteBinding.inflate(layoutInflater)
 
+        //activity 종료
+        binding.writeCancelBtn.setOnClickListener {
+            closeWriteActivity()
+        }
+        binding.writeCloseBtn.setOnClickListener {
+            closeWriteActivity()
+        }
+        binding.writeOkBtn.setOnClickListener {
+            closeWriteActivity()
+        }
+
         setContentView(binding.root)
+    }
+
+    private fun closeWriteActivity(){
+        finish()
     }
 }

@@ -50,10 +50,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun fragmentChange(SettingFragment: Fragment){
-        supportFragmentManager.beginTransaction().replace(R.id.main_frm,SettingFragment).commit()
-    }
-
 
 
 }
