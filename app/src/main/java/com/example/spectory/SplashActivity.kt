@@ -3,6 +3,7 @@ package com.example.spectory
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.spectory.databinding.ActivityLoginBinding
@@ -17,8 +18,15 @@ class SplashActivity: AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var intent = Intent(this, LoginActivity::class.java)
-        //2초 뒤 LoginActivity로 이동
-        Handler().postDelayed({startActivity(intent)}, 2000L)
+        val handler = Handler(Looper.getMainLooper())
+
+        handler.postDelayed({
+            startActivity(Intent(this,LoginActivity::class.java))
+        },2000)
+
+    }
+
+    private fun splash(){
+
     }
 }

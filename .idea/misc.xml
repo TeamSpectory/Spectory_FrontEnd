@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/drawable/ic_drawer_icon.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_edit.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_edit_box.xml" value="0.1895" />
+        <entry key="app/src/main/res/drawable/ic_edit_icon.xml" value="0.1235" />
         <entry key="app/src/main/res/drawable/ic_folder.xml" value="0.1445" />
         <entry key="app/src/main/res/drawable/ic_folder_rectangle.xml" value="0.1445" />
         <entry key="app/src/main/res/drawable/ic_id_icon.xml" value="0.1" />
@@ -24,17 +25,20 @@
         <entry key="app/src/main/res/drawable/ic_plus_button.xml" value="0.1235" />
         <entry key="app/src/main/res/drawable/ic_polygon_4.xml" value="0.1445" />
         <entry key="app/src/main/res/drawable/ic_rectangle55.xml" value="0.1445" />
+        <entry key="app/src/main/res/drawable/ic_splash_screen.xml" value="0.1145" />
+        <entry key="app/src/main/res/drawable/ic_star_.xml" value="0.1235" />
         <entry key="app/src/main/res/drawable/ic_star_2.xml" value="0.1445" />
         <entry key="app/src/main/res/drawable/ic_tag.xml" value="0.1445" />
         <entry key="app/src/main/res/drawable/ic_tag_rectangle_38.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_top_bar.xml" value="0.22332672119140629" />
         <entry key="app/src/main/res/drawable/ic_view_inside_rectangle.xml" value="0.289" />
         <entry key="app/src/main/res/drawable/ic_view_rectangle_top.xml" value="0.289" />
+        <entry key="app/src/main/res/drawable/splash_screen.xml" value="0.1145" />
         <entry key="app/src/main/res/layout/activity_edit.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1400709219858156" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1400709219858156" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_write.xml" value="0.165" />
         <entry key="app/src/main/res/layout/archiving_list.xml" value="0.3142504297121608" />
         <entry key="app/src/main/res/layout/fragment_archiving.xml" value="0.27564102564102566" />

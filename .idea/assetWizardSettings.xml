@@ -19,8 +19,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_view_inside_rectangle" />
-                            <entry key="sourceFile" value="$PROJECT_DIR$/../스펙토리 이미지 svg 파일(spectory project)/Home Screen/view inside Rectangle.svg" />
+                            <entry key="outputName" value="ic_splash_screen" />
+                            <entry key="sourceFile" value="$PROJECT_DIR$/../스펙토리 이미지 svg 파일(spectory project)/Splash Screen.svg" />
                           </map>
                         </option>
                       </PersistentState>
