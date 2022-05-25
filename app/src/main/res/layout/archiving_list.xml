@@ -19,7 +19,7 @@
         android:id="@+id/imageView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_folder_rectangle" />
@@ -40,6 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="22.01.23~22.01.26"
+        android:fontFamily="@font/roboto"
         android:textColor="#000000"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView13"
@@ -52,6 +53,9 @@
         android:layout_height="72dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="9dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/arc_list_date">
 
@@ -79,6 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="OO 공모전"
+        android:fontFamily="@font/roboto"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView16"
@@ -134,12 +139,13 @@
                 app:srcCompat="@drawable/ic_check_box" />
 
             <TextView
-
                 android:id="@+id/arc_list_job"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="직무역량"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto"
                 android:textSize="11sp" />
         </LinearLayout>
 
@@ -165,6 +171,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="성격 및 가치관"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto"
                 android:textSize="11sp" />
         </LinearLayout>
 
@@ -183,12 +191,13 @@
                 app:srcCompat="@drawable/ic_check_box" />
 
             <TextView
-
                 android:id="@+id/arc_list_together"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="협업 경험"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto"
                 android:textSize="11sp" />
         </LinearLayout>
 
@@ -220,7 +229,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_check_box" />
+                app:srcCompat="@drawable/ic_tag" />
 
             <TextView
                 android:id="@+id/arc_list_tag1"
@@ -228,6 +237,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="동아리"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto"
                 android:textSize="11sp" />
         </LinearLayout>
 
@@ -244,7 +255,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_check_box" />
+                app:srcCompat="@drawable/ic_tag" />
 
             <TextView
                 android:id="@+id/arc_list_tag2"
@@ -252,6 +263,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="앱 프로젝트"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto"
                 android:textSize="11sp" />
         </LinearLayout>
 
@@ -267,7 +280,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_check_box" />
+                app:srcCompat="@drawable/ic_tag" />
 
             <TextView
                 android:id="@+id/arc_list_tag3"
@@ -275,6 +288,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="주도적 참여"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto"
                 android:textSize="11sp" />
         </LinearLayout>
 

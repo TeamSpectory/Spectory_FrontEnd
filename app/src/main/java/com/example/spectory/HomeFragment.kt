@@ -33,10 +33,10 @@ class HomeFragment : Fragment() {
 
         jobDatas.apply {
             add(HomeData("2022.02.06","직무",R.drawable.profile,"#박람회 #취업 #참여"))
-            add(HomeData("2022.03.08","역량",R.drawable.profile,"#직무 #역량 #굿"))
-            add(HomeData("2022.01.26","하하",R.drawable.profile,"#가 #나 #다"))
-            add(HomeData("2022.12.26","호호",R.drawable.profile,"#라마 #취업 #참여"))
-            add(HomeData("2022.09.16","히히",R.drawable.profile,"#박람회 #취업 #가나다"))
+            add(HomeData("2022.03.08","역량", R.drawable.home,"#직무 #역량 #굿"))
+            add(HomeData("2022.01.26","하하", R.drawable.ic_launcher_background,"#가 #나 #다"))
+            add(HomeData("2022.12.26","호호", R.drawable.ic_rectangle55,"#라마 #취업 #참여"))
+            add(HomeData("2022.09.16","히히", R.drawable.ic_splash_screen,"#박람회 #취업 #가나다"))
         }
 
         val jobAdapter = HomeAdapter(jobDatas)
@@ -45,7 +45,7 @@ class HomeFragment : Fragment() {
 
         togetherDatas.apply {
             add(HomeData("2022.12.26","호호",R.drawable.profile,"#라마 #취업 #참여"))
-            add(HomeData("2022.09.16","히히",R.drawable.profile,"#박람회 #취업 #가나다"))
+            add(HomeData("2022.09.16","히히", R.drawable.home,"#박람회 #취업 #가나다"))
         }
 
         val togetherAdapter = HomeAdapter(togetherDatas)
@@ -53,9 +53,9 @@ class HomeFragment : Fragment() {
         binding.homeRvTogether.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         personDatas.apply {
-            add(HomeData("2022.02.06","직무",R.drawable.profile,"#박람회 #취업 #참여"))
+            add(HomeData("2022.02.06","직무", R.drawable.ic_launcher_background,"#박람회 #취업 #참여"))
             add(HomeData("2022.03.08","역량",R.drawable.profile,"#직무 #역량 #굿"))
-            add(HomeData("2022.09.16","히히",R.drawable.profile,"#박람회 #취업 #가나다"))
+            add(HomeData("2022.09.16","히히", R.drawable.home_background,"#박람회 #취업 #가나다"))
         }
 
         val personAdapter = HomeAdapter(personDatas)
