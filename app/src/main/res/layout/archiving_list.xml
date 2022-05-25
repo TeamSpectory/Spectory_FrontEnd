@@ -220,7 +220,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_check_box" />
+                app:srcCompat="@drawable/ic_tag" />
 
             <TextView
                 android:id="@+id/arc_list_tag1"
@@ -244,7 +244,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_check_box" />
+                app:srcCompat="@drawable/ic_tag" />
 
             <TextView
                 android:id="@+id/arc_list_tag2"
@@ -267,7 +267,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_check_box" />
+                app:srcCompat="@drawable/ic_tag" />
 
             <TextView
                 android:id="@+id/arc_list_tag3"

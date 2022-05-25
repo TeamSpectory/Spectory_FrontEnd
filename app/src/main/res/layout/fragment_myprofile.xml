@@ -35,45 +35,118 @@
         <TextView
             android:id="@+id/textView3"
             android:layout_width="223dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="17dp"
-            android:layout_marginEnd="188dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="121dp"
             android:gravity="center_vertical"
             android:text="MY Profile"
+            android:fontFamily="@font/montserrat"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.058"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/myprofile_edit_btn"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_marginTop="21dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="15.4dp"
+            android:layout_height="16.5dp"
+            android:layout_marginStart="308dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="36dp"
             android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/myprofile_more_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.6"
             app:srcCompat="@drawable/pencil" />
 
         <ImageView
             android:id="@+id/myprofile_more_btn"
-            android:layout_width="13dp"
+            android:layout_width="4dp"
             android:layout_height="13dp"
-            android:layout_marginTop="21dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginStart="340dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="23dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_drawer_icon" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <TableLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="16dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" >-->
+<!--        <TableRow-->
+<!--            android:layout_margin="7dp">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="105dp"-->
+<!--                android:text="이름"-->
+<!--                android:fontFamily="@font/montserrat"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15dp" />-->
+
+<!--            <TextView-->
+<!--                android:text="OOO"-->
+<!--                android:fontFamily="@font/montserrat"-->
+<!--                android:textSize="15dp"-->
+<!--                android:textColor="@color/black"/>-->
+<!--        </TableRow>-->
+<!--        <TableRow-->
+<!--            android:layout_margin="7dp">-->
+<!--            <TextView-->
+<!--                android:layout_width="105dp"-->
+<!--                android:text="아이디"-->
+<!--                android:textSize="15dp"-->
+<!--                android:fontFamily="@font/montserrat"-->
+<!--                android:textColor="@color/black"/>-->
+<!--            <TextView-->
+<!--                android:text="CCC9191"-->
+<!--                android:fontFamily="@font/montserrat"-->
+<!--                android:textSize="15dp"-->
+<!--                android:textColor="@color/black"/>-->
+<!--        </TableRow>-->
+<!--        <TableRow-->
+<!--            android:layout_margin="7dp">-->
+<!--            <TextView-->
+<!--                android:layout_width="105dp"-->
+<!--                android:text="가입일자"-->
+<!--                android:fontFamily="@font/montserrat"-->
+<!--                android:textSize="15dp"-->
+<!--                android:textColor="@color/black"/>-->
+<!--            <TextView-->
+<!--                android:text="2022.05.09"-->
+<!--                android:textSize="15dp"-->
+<!--                android:fontFamily="@font/montserrat"-->
+<!--                android:textColor="@color/black"/>-->
+<!--        </TableRow>-->
+<!--        <TableRow-->
+<!--            android:layout_margin="7dp">-->
+<!--            <TextView-->
+<!--                android:layout_width="105dp"-->
+<!--                android:text="작성한 경험 수"-->
+<!--                android:fontFamily="@font/montserrat"-->
+<!--                android:textSize="15dp"-->
+<!--                android:textColor="@color/black"/>-->
+<!--            <TextView-->
+<!--                android:text="5"-->
+<!--                android:fontFamily="@font/montserrat"-->
+<!--                android:textSize="15dp"-->
+<!--                android:textColor="@color/black"/>-->
+<!--        </TableRow>-->
+<!--    </TableLayout>-->
 
     <TableLayout
         android:layout_width="match_parent"
@@ -82,53 +155,68 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" >
-        <TableRow
-            android:layout_margin="7dp">
+        <TableRow android:layout_marginBottom="6dp">
             <TextView
-                android:layout_width="105dp"
+                android:layout_width="69dp"
+                android:fontFamily="@font/montserrat"
                 android:text="이름"
                 android:textSize="15dp"
                 android:textColor="@color/black"/>
             <TextView
                 android:text="OOO"
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="7dp"
+                android:layout_width="232dp"
+                android:layout_height="27dp"
                 android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
         </TableRow>
-        <TableRow
-            android:layout_margin="7dp">
+        <TableRow android:layout_marginBottom="6dp">
             <TextView
-                android:layout_width="105dp"
+                android:layout_width="69dp"
+                android:fontFamily="@font/montserrat"
                 android:text="아이디"
                 android:textSize="15dp"
                 android:textColor="@color/black"/>
             <TextView
                 android:text="CCC9191"
+                android:fontFamily="@font/montserrat"
                 android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:paddingLeft="7dp"
+                android:layout_width="232dp"
+                android:layout_height="27dp"
+                android:textColor="@color/black"
+                />
         </TableRow>
-        <TableRow
-            android:layout_margin="7dp">
+        <TableRow android:layout_marginBottom="6dp">
             <TextView
-                android:layout_width="105dp"
+                android:layout_width="69dp"
                 android:text="가입일자"
+                android:fontFamily="@font/montserrat"
                 android:textSize="15dp"
                 android:textColor="@color/black"/>
             <TextView
                 android:text="2022.05.09"
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="7dp"
                 android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                />
         </TableRow>
-        <TableRow
-            android:layout_margin="7dp">
+        <TableRow>
             <TextView
                 android:layout_width="105dp"
                 android:text="작성한 경험 수"
+                android:fontFamily="@font/montserrat"
                 android:textSize="15dp"
                 android:textColor="@color/black"/>
             <TextView
                 android:text="5"
+                android:paddingLeft="7dp"
+                android:fontFamily="@font/montserrat"
                 android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                />
         </TableRow>
     </TableLayout>
 

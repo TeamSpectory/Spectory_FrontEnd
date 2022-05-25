@@ -21,7 +21,6 @@ class MyprofileFragment: Fragment() {
 
         //연필 모양 클릭 시 내정보 수정 화면 열기 (SettingFragment)
         binding.myprofileEditBtn.setOnClickListener {
-            Toast.makeText(this.context,"클릭됨",Toast.LENGTH_SHORT).show()
             changeSettingFragment()
         }
         return binding.root
