@@ -45,10 +45,10 @@
         <entry key="app/src/main/res/layout/archiving_list.xml" value="0.5891472868217055" />
         <entry key="app/src/main/res/layout/fragment_archiving.xml" value="0.532496799566807" />
         <entry key="app/src/main/res/layout/fragment_editMyprofile.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3414276123046875" />
         <entry key="app/src/main/res/layout/fragment_myprofile.xml" value="0.3446701049804687" />
         <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.19935691318327975" />
-        <entry key="app/src/main/res/layout/job_list.xml" value="0.4444444444444444" />
+        <entry key="app/src/main/res/layout/job_list.xml" value="1.1202731666871752" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
       </map>
     </option>
