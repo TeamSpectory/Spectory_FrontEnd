@@ -2,6 +2,7 @@ package com.example.spectory
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import com.example.spectory.databinding.ActivityMainBinding
 
@@ -16,8 +17,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initBottomNavigation() //하단바를 통한 fragment 이동
+
+        Log.d("MAIN/JWT_TO_SERVER", getJwt().toString())
     }
 
+    private fun getJwt(): String?{
+        val spf = this.getSharedPreferences("auth",AppCompatActivity.MODE_PRIVATE)
+
+        return spf!!.getString("jwt","")
+    }
 
     //하단바 함수
     private fun initBottomNavigation(){

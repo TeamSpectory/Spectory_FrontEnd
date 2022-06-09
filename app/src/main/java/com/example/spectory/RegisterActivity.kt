@@ -12,7 +12,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.create
 
-class RegisterActivity:AppCompatActivity() {
+class RegisterActivity:AppCompatActivity(), SignUpView {
 
     lateinit var binding: ActivityRegisterBinding
 
@@ -48,23 +48,36 @@ class RegisterActivity:AppCompatActivity() {
             return
         }
 
-        val authService = getRetrofit().create(AuthRetrofitInterface::class.java)
-        authService.signUp(getUserData()).enqueue(object: Callback<AuthResponse>{
-            override fun onResponse(call: Call<AuthResponse>, response: Response<AuthResponse>) {
-                Log.d("SIGNUP/SUCCESS", response.toString())
-                val resp: AuthResponse = response.body()!!
-                when(resp.status){
-                    200->Log.d("SIGNUP/SUCCESS", resp.message)
-                    400->Log.d("SIGNUP/FAILURE", resp.message)
-                }
-            }
+//        val authService = getRetrofit().create(AuthRetrofitInterface::class.java)
+//        authService.signUp(getUserData()).enqueue(object: Callback<AuthResponse>{
+//            override fun onResponse(call: Call<AuthResponse>, response: Response<AuthResponse>) {
+//                Log.d("SIGNUP/SUCCESS", response.toString())
+//                val resp: AuthResponse = response.body()!!
+//                when(resp.status){
+//                    200->Log.d("SIGNUP/SUCCESS", resp.message)
+//                    400->Log.d("SIGNUP/FAILURE", resp.message)
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<AuthResponse>, t: Throwable) {
+//                Log.d("SIGNUP/FAILURE",t.message.toString())
+//            }
+//
+//        } )
+//
+//        Log.d("SIGNUP/FAILURE","HELLO")
 
-            override fun onFailure(call: Call<AuthResponse>, t: Throwable) {
-                Log.d("SIGNUP/FAILURE",t.message.toString())
-            }
+        val authService = AuthService()
+        authService.setSignUpView(this)
 
-        } )
+        authService.signUp(getUserData())
+    }
 
-        Log.d("SIGNUP/FAILURE","HELLO")
+    override fun onSignUpSuccess() {
+        Log.d("회원가입","가입 성공")
+    }
+
+    override fun onSignUpFailure() {
+        Toast.makeText(this,"이미 존재하는 아이디입니다.",Toast.LENGTH_SHORT).show()
     }
 }
