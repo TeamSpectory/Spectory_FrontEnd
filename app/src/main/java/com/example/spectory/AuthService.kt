@@ -10,6 +10,7 @@ import kotlin.math.sign
 class AuthService {
     private lateinit var signUpView: SignUpView
     private lateinit var loginView: LoginView
+    private lateinit var profileView: ProfileView
 
     fun setSignUpView(signUpView: SignUpView){
         this.signUpView = signUpView
@@ -17,6 +18,10 @@ class AuthService {
 
     fun setLoginView(loginView: LoginView){
         this.loginView = loginView
+    }
+
+    fun setProfileView(profileView: ProfileView){
+        this.profileView = profileView
     }
 
 
@@ -64,4 +69,23 @@ class AuthService {
         //Log.d("LOGIN/FAILURE","HELLO")
     }
 
+    //내 프로필 확인
+    fun myprofile(userIdx: Int){
+        val authService = getRetrofit().create(AuthRetrofitInterface::class.java)
+        authService.myprofile(userIdx).enqueue(object: Callback<AuthResponse> {
+            override fun onResponse(call: Call<AuthResponse>, response: Response<AuthResponse>) {
+                Log.d("PROFILE", response.toString())
+                val resp: AuthResponse = response.body()!!
+                when(val status = resp.status){
+                    200 -> profileView.onProfileSuccess(status,resp.data!!)
+                    else -> profileView.onProfileFailure()
+                }
+            }
+
+            override fun onFailure(call: Call<AuthResponse>, t: Throwable) {
+                Log.d("PROFILE/FAILURE",t.message.toString())
+            }
+
+        } )
+    }
 }

@@ -9,6 +9,9 @@ data class AuthResponse(
     )
 
 data class Data(
-    @SerializedName(value="userIdx") var userIdx : Int,
-    @SerializedName(value="token") var token: String?
-)
+    @SerializedName(value="userIdx") var userIdx : Int?,
+    @SerializedName(value="token") var token: String?,
+    @SerializedName(value="nickname") var nickname : String?,
+    @SerializedName(value="id") var id : String?,
+    @SerializedName(value="created_date") var created_date: String?,
+    )
