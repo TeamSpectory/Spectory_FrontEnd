@@ -11,6 +11,8 @@ class AuthService {
     private lateinit var signUpView: SignUpView
     private lateinit var loginView: LoginView
     private lateinit var profileView: ProfileView
+    private lateinit var writeView: WriteView
+
 
     fun setSignUpView(signUpView: SignUpView){
         this.signUpView = signUpView
@@ -22,6 +24,10 @@ class AuthService {
 
     fun setProfileView(profileView: ProfileView){
         this.profileView = profileView
+    }
+
+    fun setWriteView(writeView: WriteView){
+        this.writeView = writeView
     }
 
 
@@ -87,5 +93,27 @@ class AuthService {
             }
 
         } )
+    }
+
+    //게시글 쓰기
+    fun write(post: WriteData){
+        val authService = getRetrofit().create(AuthRetrofitInterface::class.java)
+        authService.write(post).enqueue(object: Callback<AuthResponse> {
+            override fun onResponse(call: Call<AuthResponse>, response: Response<AuthResponse>) {
+                Log.d("WRITE", response.toString())
+//                val resp: AuthResponse = response.body()!!
+//                when(val status = resp.status){
+//                    200 -> writeView.onWriteSuccess(status,resp.data!!)
+//                    else -> writeView.onWriteFailure()
+//                }
+            }
+
+            override fun onFailure(call: Call<AuthResponse>, t: Throwable) {
+                Log.d("WRITE/FAILURE",t.message.toString())
+            }
+
+        } )
+
+        Log.d("WRITE/FAILURE","HELLO")
     }
 }
