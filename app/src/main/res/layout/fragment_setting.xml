@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -95,15 +96,17 @@
                 android:text="이름"
                 android:textSize="15dp"
                 android:textColor="@color/black"/>
+
             <EditText
-                android:text="OOO"
-                android:fontFamily="@font/montserrat"
-                android:paddingLeft="7dp"
+                android:id="@+id/setting_name"
                 android:layout_width="232dp"
                 android:layout_height="27dp"
-                android:textSize="15dp"
+                android:background="@drawable/ic_edit_box"
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="7dp"
                 android:textColor="@color/black"
-                android:background="@drawable/ic_edit_box"/>
+                android:text=""
+                android:textSize="15dp" />
         </TableRow>
         <TableRow android:layout_marginBottom="6dp">
             <TextView
@@ -112,15 +115,16 @@
                 android:text="아이디"
                 android:textSize="15dp"
                 android:textColor="@color/black"/>
+
             <EditText
-                android:text="CCC9191"
-                android:fontFamily="@font/montserrat"
-                android:textSize="15dp"
-                android:paddingLeft="7dp"
+                android:id="@+id/setting_id"
                 android:layout_width="232dp"
                 android:layout_height="27dp"
+                android:background="@drawable/ic_edit_box"
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="7dp"
                 android:textColor="@color/black"
-                android:background="@drawable/ic_edit_box"/>
+                android:textSize="15dp" />
         </TableRow>
         <TableRow android:layout_marginBottom="6dp">
             <TextView
@@ -129,13 +133,14 @@
                 android:fontFamily="@font/montserrat"
                 android:textSize="15dp"
                 android:textColor="@color/black"/>
+
             <EditText
-                android:text="2022.05.09"
+                android:id="@+id/setting_date"
+                android:background="@drawable/ic_edit_box"
                 android:fontFamily="@font/montserrat"
                 android:paddingLeft="7dp"
-                android:textSize="15dp"
                 android:textColor="@color/black"
-                android:background="@drawable/ic_edit_box"/>
+                android:textSize="15dp" />
         </TableRow>
         <TableRow>
             <TextView
@@ -144,13 +149,15 @@
                 android:fontFamily="@font/montserrat"
                 android:textSize="15dp"
                 android:textColor="@color/black"/>
+
             <EditText
-                android:text="5"
-                android:paddingLeft="7dp"
+                android:id="@+id/setting_count"
+                android:background="@drawable/ic_edit_box"
                 android:fontFamily="@font/montserrat"
-                android:textSize="15dp"
+                android:paddingLeft="7dp"
+                android:text="5"
                 android:textColor="@color/black"
-                android:background="@drawable/ic_edit_box"/>
+                android:textSize="15dp" />
         </TableRow>
     </TableLayout>
 
