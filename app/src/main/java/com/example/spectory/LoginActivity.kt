@@ -45,13 +45,12 @@ class LoginActivity: AppCompatActivity(), LoginView {
         authService.setLoginView(this)
 
         authService.login(getUserData())
-
     }
 
     override fun onLoginSuccess(status: Int, data: Data) {
         when(status){
             200 -> {
-                saveJwt(data.token!!)
+                saveJwt(data.token!!,data.userIdx!!)
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             }
@@ -62,13 +61,13 @@ class LoginActivity: AppCompatActivity(), LoginView {
         TODO("Not yet implemented")
     }
 
-    //로그인 할 때 token 받아와서 저장 -> userIdx도 저장?
-    private fun saveJwt(jwt: String){
+    //로그인 할 때 token 받아와서 저장 -> userIdx도 저장 !!
+    private fun saveJwt(jwt: String, userIdx: Int){
         val spf = getSharedPreferences("auth", MODE_PRIVATE)
         val editor = spf.edit()
 
         editor.putString("jwt",jwt)
+        editor.putInt("userIdx",userIdx)
         editor.apply()
-
     }
 }

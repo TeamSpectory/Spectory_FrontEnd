@@ -162,14 +162,16 @@
                 android:text="이름"
                 android:textSize="15dp"
                 android:textColor="@color/black"/>
+
             <TextView
-                android:text="OOO"
-                android:fontFamily="@font/montserrat"
-                android:paddingLeft="7dp"
+                android:id="@+id/myprofile_name"
                 android:layout_width="232dp"
                 android:layout_height="27dp"
-                android:textSize="15dp"
-                android:textColor="@color/black" />
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="7dp"
+                android:text="OOO"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
         </TableRow>
         <TableRow android:layout_marginBottom="6dp">
             <TextView
@@ -178,15 +180,16 @@
                 android:text="아이디"
                 android:textSize="15dp"
                 android:textColor="@color/black"/>
+
             <TextView
-                android:text="CCC9191"
-                android:fontFamily="@font/montserrat"
-                android:textSize="15dp"
-                android:paddingLeft="7dp"
+                android:id="@+id/myprofile_id"
                 android:layout_width="232dp"
                 android:layout_height="27dp"
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="7dp"
+                android:text="CCC9191"
                 android:textColor="@color/black"
-                />
+                android:textSize="15dp" />
         </TableRow>
         <TableRow android:layout_marginBottom="6dp">
             <TextView
@@ -195,13 +198,14 @@
                 android:fontFamily="@font/montserrat"
                 android:textSize="15dp"
                 android:textColor="@color/black"/>
+
             <TextView
-                android:text="2022.05.09"
+                android:id="@+id/myprofile_date"
                 android:fontFamily="@font/montserrat"
                 android:paddingLeft="7dp"
-                android:textSize="15dp"
+                android:text="2022.05.09"
                 android:textColor="@color/black"
-                />
+                android:textSize="15dp" />
         </TableRow>
         <TableRow>
             <TextView
@@ -210,13 +214,14 @@
                 android:fontFamily="@font/montserrat"
                 android:textSize="15dp"
                 android:textColor="@color/black"/>
+
             <TextView
-                android:text="5"
-                android:paddingLeft="7dp"
+                android:id="@+id/myprofile_count"
                 android:fontFamily="@font/montserrat"
-                android:textSize="15dp"
+                android:paddingLeft="7dp"
+                android:text="5"
                 android:textColor="@color/black"
-                />
+                android:textSize="15dp" />
         </TableRow>
     </TableLayout>
 

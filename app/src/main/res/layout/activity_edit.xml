@@ -84,7 +84,7 @@
                 android:background="@color/black" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/write_title"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:layout_margin="10dp"
@@ -123,7 +123,7 @@
                 android:background="@color/black" />
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/write_situation"
                 android:layout_width="match_parent"
                 android:layout_height="85dp"
                 android:layout_margin="10dp"
@@ -144,7 +144,7 @@
                 android:background="@color/black" />
 
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/write_action"
                 android:layout_width="match_parent"
                 android:layout_height="85dp"
                 android:layout_margin="10dp"
@@ -165,7 +165,7 @@
                 android:background="@color/black" />
 
             <EditText
-                android:id="@+id/editText5"
+                android:id="@+id/write_learned"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:layout_margin="10dp"

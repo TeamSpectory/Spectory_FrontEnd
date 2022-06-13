@@ -85,7 +85,7 @@
                 android:background="@color/black" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/write_title"
                 android:layout_width="match_parent"
                 android:layout_height="24dp"
                 android:layout_margin="10dp"
@@ -105,11 +105,13 @@
                 android:layout_marginTop="-8dp"
                 android:layout_marginLeft="10dp"
                 android:background="@color/black" />
+
             <EditText
-                android:layout_margin="10dp"
+                android:id="@+id/write_date"
                 android:layout_width="match_parent"
-                android:background="@drawable/ic_rectangle_35"
-                android:layout_height="25dp"/>
+                android:layout_height="25dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/ic_rectangle_35" />
 
             <TextView
                 android:id="@+id/textView12"
@@ -128,7 +130,7 @@
                 android:background="@color/black" />
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/write_situation"
                 android:layout_width="match_parent"
                 android:layout_height="85dp"
                 android:layout_margin="10dp"
@@ -151,7 +153,7 @@
                 android:background="@color/black" />
 
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/write_action"
                 android:layout_width="match_parent"
                 android:layout_height="85dp"
                 android:layout_margin="10dp"
@@ -174,7 +176,7 @@
                 android:background="@color/black" />
 
             <EditText
-                android:id="@+id/editText5"
+                android:id="@+id/write_learned"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:layout_margin="10dp"
@@ -237,25 +239,30 @@
                 >
 
                 <ImageView
+                    android:id="@+id/write_star1"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_star_" />
+                <ImageView
+                    android:id="@+id/write_star2"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_star_"/>
                 <ImageView
+                    android:id="@+id/write_star3"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_star_"/>
                 <ImageView
+                    android:id="@+id/write_star4"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_star_"/>
                 <ImageView
+                    android:id="@+id/write_star5"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_star_"/>
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_star_"/>
+                    android:src="@drawable/ic_star_" />
             </LinearLayout>
 
 
@@ -282,23 +289,26 @@
                 android:orientation="horizontal"
                 >
 
-                <ImageView
+                <EditText
+                    android:id="@+id/write_tag1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_tag_rectangle_38"/>
+                    android:background="@drawable/ic_tag_rectangle_38" />
 
-                <ImageView
+                <EditText
+                    android:id="@+id/write_tag2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_tag_rectangle_38"/>
+                    android:background="@drawable/ic_tag_rectangle_38" />
 
-                <ImageView
+                <EditText
+                    android:id="@+id/write_tag3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_tag_rectangle_38"/>
+                    android:background="@drawable/ic_tag_rectangle_38" />
 
 
             </LinearLayout>

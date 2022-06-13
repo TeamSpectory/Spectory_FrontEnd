@@ -2,8 +2,7 @@ package com.example.spectory
 
 
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface AuthRetrofitInterface {
     //회원가입
@@ -13,4 +12,15 @@ interface AuthRetrofitInterface {
     //로그인
     @POST("/user/login")
     fun login(@Body user: UserData): Call<AuthResponse>
+
+    //게시글 쓰기
+    @Headers("Content-Type:application/json")
+    @POST("/post/write")
+    fun write(@Body user: WriteData): Call<AuthResponse>
+
+    //내 프로필
+    @Headers("Content-Type:application/json")
+    @GET("/user/profile/{userIdx}")
+    fun myprofile(
+        @Path("userIdx") userIdx: Int): Call<AuthResponse>
 }
