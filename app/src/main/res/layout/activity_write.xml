@@ -262,7 +262,7 @@
                     android:id="@+id/write_star5"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_star_"/>
+                    android:src="@drawable/ic_star_" />
             </LinearLayout>
 
 
@@ -289,26 +289,26 @@
                 android:orientation="horizontal"
                 >
 
-                <ImageView
+                <EditText
                     android:id="@+id/write_tag1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_tag_rectangle_38" />
+                    android:background="@drawable/ic_tag_rectangle_38" />
 
-                <ImageView
+                <EditText
                     android:id="@+id/write_tag2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_tag_rectangle_38" />
+                    android:background="@drawable/ic_tag_rectangle_38" />
 
-                <ImageView
+                <EditText
                     android:id="@+id/write_tag3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_tag_rectangle_38" />
+                    android:background="@drawable/ic_tag_rectangle_38" />
 
 
             </LinearLayout>
