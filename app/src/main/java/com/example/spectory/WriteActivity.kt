@@ -110,8 +110,8 @@ class WriteActivity: AppCompatActivity(), WriteView {
         val tags: String = binding.writeTag1.text.toString()+binding.writeTag2.text.toString()+binding.writeTag3.text.toString()
         val userIdx: Int = getUserIdx()
 
-        return WriteData(1,title,startDate,endDate,situation,action,learned,rates,tags,userIdx)
-        Log.d("writeData",WriteData(1,title,startDate,endDate,situation,action,learned,rates,tags,userIdx).toString())
+        return WriteData("",title,startDate,endDate,situation,action,learned,"",tags,userIdx)
+       // Log.d("writeData",WriteData(1,title,startDate,endDate,situation,action,learned,rates,tags,userIdx).toString())
     }
 
     override fun onWriteSuccess(status: Int, message: String, data: Data) {
@@ -134,13 +134,13 @@ class WriteActivity: AppCompatActivity(), WriteView {
 
     private fun writeTest(){
         val authService = getRetrofit().create(WriteRetrofitInterface::class.java)
-        authService.write(WriteData(2,"","","","","","",3,"",16)).enqueue(object: Callback<AuthResponse>{
-            override fun onResponse(call: Call<AuthResponse>, response: Response<AuthResponse>) {
+        authService.write(WriteData("","","","","","","","","",2)).enqueue(object:Callback<WriteResponse>{
+            override fun onResponse(call: Call<WriteResponse>, response: Response<WriteResponse>) {
                 Log.d("WRITE/SUCCESS",response.toString())
 
             }
 
-            override fun onFailure(call: Call<AuthResponse>, t: Throwable) {
+            override fun onFailure(call: Call<WriteResponse>, t: Throwable) {
                 Log.d("WRITE/FAIL",t.message.toString())
             }
 
