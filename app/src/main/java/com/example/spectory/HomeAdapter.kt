@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.spectory.databinding.ArchivingListBinding
 import com.example.spectory.databinding.JobListBinding
 
-class HomeAdapter(private val homeDataList: ArrayList<HomeData>): RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+class HomeAdapter(private val homeDataList: ArrayList<PostResponse>): RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): HomeAdapter.ViewHolder {
         val binding: JobListBinding = JobListBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
@@ -24,11 +24,11 @@ class HomeAdapter(private val homeDataList: ArrayList<HomeData>): RecyclerView.A
 
     inner class ViewHolder(val binding: JobListBinding): RecyclerView.ViewHolder(binding.root){
 
-        fun bind(homeData: HomeData){
-            binding.jobListDate.text = homeData.homeDate
-            binding.jobListImg.setImageResource(homeData.homeImg!!)
-            binding.jobListName.text = homeData.homeName
-            binding.jobListTag.text = homeData.homeTag
+        fun bind(homeData: PostResponse){
+            binding.jobListDate.text = homeData.startDate
+            //binding.jobListImg.setImageResource(homeData.homeImg!!)
+            binding.jobListName.text = homeData.title
+            binding.jobListTag.text = "#"+homeData.tags.split("/")[0]+" #"+homeData.tags.split("/")[1]+" #"+homeData.tags.split("/")[2]
         }
     }
 
