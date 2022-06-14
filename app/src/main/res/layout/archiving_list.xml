@@ -132,11 +132,12 @@
 
             <ImageView
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/arc_list_type1"
+                android:layout_width="11dp"
+                android:layout_height="11dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_check_box" />
+                app:srcCompat="@drawable/box_empty" />
 
             <TextView
                 android:id="@+id/arc_list_job"
@@ -158,11 +159,12 @@
 
             <ImageView
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/arc_list_type2"
+                android:layout_width="11dp"
+                android:layout_height="11dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_check_box" />
+                app:srcCompat="@drawable/box_empty" />
 
             <TextView
 
@@ -184,11 +186,12 @@
 
             <ImageView
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/arc_list_type3"
+                android:layout_width="11dp"
+                android:layout_height="11dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_check_box" />
+                app:srcCompat="@drawable/box_empty" />
 
             <TextView
                 android:id="@+id/arc_list_together"

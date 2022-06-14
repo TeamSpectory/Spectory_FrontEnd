@@ -6,5 +6,5 @@ import retrofit2.http.POST
 
 interface WriteRetrofitInterface {
     @POST("/post/write")
-    fun write(@Body write: WriteData): Call<AuthResponse>
+    fun write(@Body write: WriteData): Call<WriteResponse>
 }

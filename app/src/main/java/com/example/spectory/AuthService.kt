@@ -12,7 +12,7 @@ class AuthService {
     private lateinit var loginView: LoginView
     private lateinit var profileView: ProfileView
     private lateinit var writeView: WriteView
-
+    private lateinit var archiveView: ArchiveView
 
     fun setSignUpView(signUpView: SignUpView){
         this.signUpView = signUpView
@@ -28,6 +28,10 @@ class AuthService {
 
     fun setWriteView(writeView: WriteView){
         this.writeView = writeView
+    }
+
+    fun setArchiveView(archiveView: ArchiveView){
+        this.archiveView = archiveView
     }
 
 
@@ -98,8 +102,8 @@ class AuthService {
     //게시글 쓰기
     fun write(post: WriteData){
         val authService = getRetrofit().create(AuthRetrofitInterface::class.java)
-        authService.write(post).enqueue(object: Callback<AuthResponse> {
-            override fun onResponse(call: Call<AuthResponse>, response: Response<AuthResponse>) {
+        authService.write(post).enqueue(object: Callback<WriteResponse> {
+            override fun onResponse(call: Call<WriteResponse>, response: Response<WriteResponse>) {
                 Log.d("WRITE", response.toString())
 //                val resp: AuthResponse = response.body()!!
 //                when(val status = resp.status){
@@ -108,12 +112,31 @@ class AuthService {
 //                }
             }
 
-            override fun onFailure(call: Call<AuthResponse>, t: Throwable) {
+            override fun onFailure(call: Call<WriteResponse>, t: Throwable) {
                 Log.d("WRITE/FAILURE",t.message.toString())
             }
 
         } )
 
         Log.d("WRITE/FAILURE","HELLO")
+    }
+
+
+    //전체 글 보기
+    fun archiving(userIdx: Int){
+        val authService = getRetrofit().create(AuthRetrofitInterface::class.java)
+        authService.archiving(userIdx).enqueue(object: Callback<List<PostResponse>> {
+            override fun onResponse(call: Call<List<PostResponse>>, response: Response<List<PostResponse>>) {
+                Log.d("ARCHIVE", response.toString())
+                val resp: List<PostResponse> = response.body()!!
+                archiveView.onArchiveSuccess(resp)
+                Log.d("아아아악",resp.toString())
+            }
+
+            override fun onFailure(call: Call<List<PostResponse>>, t: Throwable) {
+                Log.d("PROFILE/FAILURE",t.message.toString())
+            }
+
+        } )
     }
 }

@@ -3,6 +3,7 @@ package com.example.spectory
 import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.spectory.databinding.ActivityLoginBinding
 import com.example.spectory.databinding.ActivityMainBinding
@@ -68,6 +69,9 @@ class LoginActivity: AppCompatActivity(), LoginView {
 
         editor.putString("jwt",jwt)
         editor.putInt("userIdx",userIdx)
+
+        Log.d("USERIDX",userIdx.toString())
+
         editor.apply()
     }
 }
