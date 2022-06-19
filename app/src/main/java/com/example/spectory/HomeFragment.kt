@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.spectory.databinding.FragmentArchivingBinding
 import com.example.spectory.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment(), ArchiveView {
+class HomeFragment : Fragment(), ArchiveView, ProfileView {
 
     lateinit var binding: FragmentHomeBinding
     private var jobDatas = ArrayList<PostResponse>()
@@ -32,9 +32,8 @@ class HomeFragment : Fragment(), ArchiveView {
             startActivity(intent)
         }
 
+        getNickname()
         archive()
-
-
         return binding.root
     }
 
@@ -51,6 +50,13 @@ class HomeFragment : Fragment(), ArchiveView {
         return spf!!.getInt("userIdx", 0)
     }
 
+    //닉네임 받아오기
+//    private fun getNickname(): String {
+//        val spf = this.activity?.getSharedPreferences("auth", AppCompatActivity.MODE_PRIVATE)
+//
+//        return spf!!.getString("nickname", "")!!
+//    }
+
     override fun onArchiveSuccess(resp: List<PostResponse>) {
         for (i in resp) {
             if (i.type == 1) {
@@ -66,20 +72,43 @@ class HomeFragment : Fragment(), ArchiveView {
         binding.homeRvJob.adapter = jobAdapter
         binding.homeRvJob.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.homeJobTv.text = "> 나의 직무 역량 ("+jobDatas.size+")"
 
         val togetherAdapter = HomeAdapter(togetherDatas)
         binding.homeRvTogether.adapter = togetherAdapter
         binding.homeRvTogether.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.homeTogetherTv.text = "> 나의 협업 경험 ("+togetherDatas.size+")"
 
         val personAdapter = HomeAdapter(personDatas)
         binding.homeRvPerson.adapter = personAdapter
         binding.homeRvPerson.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.homePersonTv.text = "> 나의 성격 및 가치관 ("+personDatas.size+")"
 
     }
 
     override fun onArchiveFailure() {
+        TODO("Not yet implemented")
+    }
+
+
+    private fun getNickname() {
+        val authService = AuthService()
+        authService.setProfileView(this)
+
+        authService.myprofile(getUserIdx())
+    }
+
+    override fun onProfileSuccess(status: Int, data: Data) {
+        when(status){
+            200 -> {
+                binding.homeName.text = "안녕하세요\n"+data.nickname+"님!"
+            }
+        }
+    }
+
+    override fun onProfileFailure() {
         TODO("Not yet implemented")
     }
 }

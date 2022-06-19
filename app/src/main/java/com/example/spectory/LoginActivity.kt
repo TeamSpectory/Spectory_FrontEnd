@@ -69,8 +69,9 @@ class LoginActivity: AppCompatActivity(), LoginView {
 
         editor.putString("jwt",jwt)
         editor.putInt("userIdx",userIdx)
+        //editor.putString("nickname",nickname)
 
-        Log.d("USERIDX",userIdx.toString())
+        //Log.d("USERIDX",userIdx.toString())
 
         editor.apply()
     }

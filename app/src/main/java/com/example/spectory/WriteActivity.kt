@@ -31,11 +31,9 @@ class WriteActivity: AppCompatActivity(), WriteView {
             closeWriteActivity()
         }
         binding.writeOkBtn.setOnClickListener {
-            writeTest()
-            //closeWriteActivity()
+            write()
+            closeWriteActivity()
         }
-
-
 
         star()
         setContentView(binding.root)
@@ -89,13 +87,6 @@ class WriteActivity: AppCompatActivity(), WriteView {
         }
     }
 
-    private fun write() {
-        val songService = AuthService()
-        songService.setWriteView(this)
-        songService.write(getWriteData())
-        //songService.write(WriteData(1,"","","","","","",3,"",2))
-    }
-
     //입력한 값들로부터 UserData 객체 받아오기
     private fun getWriteData(): WriteData {
         //post 객체 선언 후 입력된 값들 저장해서 서버에 전송
@@ -107,10 +98,10 @@ class WriteActivity: AppCompatActivity(), WriteView {
         val action: String = binding.writeAction.text.toString()
         val learned: String = binding.writeLearned.text.toString()
         val rates: Int = star
-        val tags: String = binding.writeTag1.text.toString()+binding.writeTag2.text.toString()+binding.writeTag3.text.toString()
+        val tags: String = binding.writeTag1.text.toString()+"/"+binding.writeTag2.text.toString()+"/"+binding.writeTag3.text.toString()
         val userIdx: Int = getUserIdx()
 
-        return WriteData("",title,startDate,endDate,situation,action,learned,"",tags,userIdx)
+        return WriteData(2,title,startDate,endDate,situation,action,learned,rates,tags,userIdx)
        // Log.d("writeData",WriteData(1,title,startDate,endDate,situation,action,learned,rates,tags,userIdx).toString())
     }
 
@@ -132,12 +123,12 @@ class WriteActivity: AppCompatActivity(), WriteView {
         return spf!!.getInt("userIdx",0)
     }
 
-    private fun writeTest(){
+    private fun write(){
         val authService = getRetrofit().create(WriteRetrofitInterface::class.java)
-        authService.write(WriteData("","","","","","","","","",2)).enqueue(object:Callback<WriteResponse>{
+        //Log.d("TEST",WriteData(1,"제목","2022-10-11","2022-10-12","상황","행동","배운 것",4,"d/d/d",20).toString())
+        authService.write(getWriteData()).enqueue(object:Callback<WriteResponse>{
             override fun onResponse(call: Call<WriteResponse>, response: Response<WriteResponse>) {
                 Log.d("WRITE/SUCCESS",response.toString())
-
             }
 
             override fun onFailure(call: Call<WriteResponse>, t: Throwable) {
