@@ -13,6 +13,7 @@ class AuthService {
     private lateinit var profileView: ProfileView
     private lateinit var writeView: WriteView
     private lateinit var archiveView: ArchiveView
+    private lateinit var detailView: DetailView
 
     fun setSignUpView(signUpView: SignUpView){
         this.signUpView = signUpView
@@ -32,6 +33,10 @@ class AuthService {
 
     fun setArchiveView(archiveView: ArchiveView){
         this.archiveView = archiveView
+    }
+
+    fun setDetailView(detailView: DetailView){
+        this.detailView = detailView
     }
 
 
@@ -135,6 +140,26 @@ class AuthService {
 
             override fun onFailure(call: Call<List<PostResponse>>, t: Throwable) {
                 Log.d("PROFILE/FAILURE",t.message.toString())
+            }
+
+        } )
+    }
+
+    //글 상세정보 보기
+    fun detail(postIdx: Int){
+        val authService = getRetrofit().create(WriteRetrofitInterface::class.java)
+        authService.detail(postIdx).enqueue(object: Callback<DetailResponse> {
+            override fun onResponse(call: Call<DetailResponse>, response: Response<DetailResponse>) {
+                Log.d("DETAIL", response.toString())
+                val resp: DetailResponse = response.body()!!
+                when(val status = resp.status){
+                    200 -> detailView.onDetailSuccess(status,resp)
+                    else -> detailView.onDetailFailure()
+                }
+            }
+
+            override fun onFailure(call: Call<DetailResponse>, t: Throwable) {
+                Log.d("DETAIL/FAILURE",t.message.toString())
             }
 
         } )

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/arc_list_layout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
@@ -39,8 +40,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="22.01.23~22.01.26"
         android:fontFamily="@font/roboto"
+        android:text="22.01.23~22.01.26"
         android:textColor="#000000"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView13"
@@ -82,8 +83,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="OO 공모전"
         android:fontFamily="@font/roboto"
+        android:text="OO 공모전"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView16"
@@ -144,9 +145,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/roboto"
                 android:text="직무역량"
                 android:textColor="@color/black"
-                android:fontFamily="@font/roboto"
                 android:textSize="11sp" />
         </LinearLayout>
 
@@ -172,9 +173,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/roboto"
                 android:text="성격 및 가치관"
                 android:textColor="@color/black"
-                android:fontFamily="@font/roboto"
                 android:textSize="11sp" />
         </LinearLayout>
 
@@ -198,9 +199,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/roboto"
                 android:text="협업 경험"
                 android:textColor="@color/black"
-                android:fontFamily="@font/roboto"
                 android:textSize="11sp" />
         </LinearLayout>
 
@@ -239,9 +240,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/roboto"
                 android:text="동아리"
                 android:textColor="@color/black"
-                android:fontFamily="@font/roboto"
                 android:textSize="11sp" />
         </LinearLayout>
 
@@ -265,9 +266,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/roboto"
                 android:text="앱 프로젝트"
                 android:textColor="@color/black"
-                android:fontFamily="@font/roboto"
                 android:textSize="11sp" />
         </LinearLayout>
 
@@ -290,9 +291,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/roboto"
                 android:text="주도적 참여"
                 android:textColor="@color/black"
-                android:fontFamily="@font/roboto"
                 android:textSize="11sp" />
         </LinearLayout>
 
