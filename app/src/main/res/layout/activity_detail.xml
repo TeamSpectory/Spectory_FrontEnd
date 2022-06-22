@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/coiny"
+        android:gravity="center"
+        android:text="spectory"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/white_edge"
+        android:fontFamily="@font/karla"
+        android:gravity="center"
+        android:text="나의 경험기록"
+        android:textColor="#000000"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/write_close_btn"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="10dp"
+        android:background="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toTopOf="@+id/textView9"
+        app:srcCompat="@drawable/close_btn" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:text="이 경험의 이름은 무엇인가요?"
+                android:fontFamily="@font/roboto"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_marginTop="-8dp"
+                android:layout_width="250dp"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/black" />
+
+            <TextView
+                android:id="@+id/detail_title"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/ic_rectangle_35" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:text="이 경험의 시작과 끝은 언제인가요?"
+                android:fontFamily="@font/roboto"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+            <View
+                android:layout_width="250dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="-8dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/black" />
+
+            <TextView
+                android:id="@+id/detail_date"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/ic_rectangle_35" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/roboto"
+                android:text="어떤 상황이었나요?"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+            <View
+                android:layout_width="250dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="-8dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/black" />
+
+            <TextView
+                android:id="@+id/detail_situation"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/ic_rectangle_35" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/roboto"
+                android:text="나는 어떻게 행동했나요?"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+            <View
+                android:layout_width="250dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="-8dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/black" />
+
+            <TextView
+                android:id="@+id/detail_action"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/ic_rectangle_35" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:text="어떤 지식 / 태도를 배웠나요?"
+                android:fontFamily="@font/roboto"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+            <View
+                android:layout_width="250dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="-8dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/black" />
+
+            <TextView
+                android:id="@+id/detail_learned"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/ic_rectangle_35" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:text="경험을 담은 사진이 있나요?"
+                android:fontFamily="@font/roboto"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+            <View
+                android:layout_width="250dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="-8dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/black" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="89dp"
+                android:layout_margin="10dp"
+                android:layout_height="84dp"
+                android:background="@drawable/ic_rectangle_35">
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/add_button_plus" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:text="이 경험에 별점을 매긴다면?"
+                android:fontFamily="@font/roboto"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+            <View
+                android:layout_width="250dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="-8dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:id="@+id/detail_star1"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_star_" />
+                <ImageView
+                    android:id="@+id/detail_star2"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_star_"/>
+                <ImageView
+                    android:id="@+id/detail_star3"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_star_"/>
+                <ImageView
+                    android:id="@+id/detail_star4"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_star_"/>
+                <ImageView
+                    android:id="@+id/detail_star5"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_star_" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:text="경험을 잘 표현할 3가지 태그는?"
+                android:fontFamily="@font/roboto"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+            <View
+                android:layout_width="250dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="-8dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_margin="7dp"
+                android:layout_marginBottom="30dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/detail_tag1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/ic_tag_rectangle_38" />
+
+                <TextView
+                    android:id="@+id/detail_tag2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/ic_tag_rectangle_38" />
+
+                <TextView
+                    android:id="@+id/detail_tag3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/ic_tag_rectangle_38" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.996">
+
+        <Button
+            android:id="@+id/write_cancel_btn"
+            android:layout_width="164dp"
+            android:layout_height="45dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/write_btn_gray"
+            android:text="닫기" />
+
+        <Button
+            android:id="@+id/write_ok_btn"
+            android:layout_width="164dp"
+            android:layout_height="45dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/write_btn"
+            android:text="닫기" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

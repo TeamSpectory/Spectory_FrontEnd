@@ -28,5 +28,4 @@ interface AuthRetrofitInterface {
     @Headers("Content-Type:application/json")
     @GET("/user/profile/{userIdx}")
     fun myprofile(@Path("userIdx") userIdx: Int): Call<AuthResponse>
-
 }

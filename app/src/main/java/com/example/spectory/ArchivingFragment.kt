@@ -1,5 +1,6 @@
 package com.example.spectory
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -67,6 +68,19 @@ class ArchivingFragment: Fragment(), ArchiveView {
         val archiveAdapter = ArchiveAdapter(archiveDatas)
         binding.archiveRv.adapter = archiveAdapter
         binding.archiveRv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+        //리사이클러뷰의 각각 아이템을 클릭했을 때
+        archiveAdapter.setMyItemClickListener(object: ArchiveAdapter.MyItemClickListener{
+            override fun onItemClick(archive: PostResponse) {
+                //DetailAcitivy 열기
+                //로그 찍어서 postIdx 받아오기
+                Log.d("postIdx",archive.postIdx.toString())
+                //해당 postIdx로 가득찬 DetailActivity 열기
+                val intent = Intent(context, DetailActivity::class.java)
+                intent.putExtra("postIdx",archive.postIdx.toString())
+                startActivity(intent)
+            }
+        })
     }
 
 

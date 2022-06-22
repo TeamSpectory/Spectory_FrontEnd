@@ -1,11 +1,26 @@
 package com.example.spectory
 
+import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.spectory.databinding.ArchivingListBinding
+import kotlin.coroutines.coroutineContext
 
 class ArchiveAdapter(private val archiveDataList: ArrayList<PostResponse>): RecyclerView.Adapter<ArchiveAdapter.ViewHolder>() {
+
+    interface MyItemClickListener{
+        fun onItemClick(archive: PostResponse)
+    }
+
+    private lateinit var mItemClickListener: MyItemClickListener
+
+    fun setMyItemClickListener(itemClickListener: MyItemClickListener){
+        mItemClickListener = itemClickListener
+    }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ArchiveAdapter.ViewHolder {
         val binding: ArchivingListBinding = ArchivingListBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
@@ -15,6 +30,9 @@ class ArchiveAdapter(private val archiveDataList: ArrayList<PostResponse>): Recy
 
     override fun onBindViewHolder(holder: ArchiveAdapter.ViewHolder, position: Int) {
         holder.bind(archiveDataList[position])
+        holder.itemView.setOnClickListener {
+            mItemClickListener.onItemClick(archiveDataList[position])
+        }
    }
 
     override fun getItemCount(): Int {
@@ -45,6 +63,14 @@ class ArchiveAdapter(private val archiveDataList: ArrayList<PostResponse>): Recy
             binding.arcListTag1.text=archiveData.tags.split("/")[0]
             binding.arcListTag2.text=archiveData.tags.split("/")[1]
             binding.arcListTag3.text=archiveData.tags.split("/")[2]
+//
+//            //해당 리사이클러뷰 클릭했을 때
+//            binding.arcListLayout.setOnClickListener {
+//                //로그 찍어서 postIdx 받아오기
+//                Log.d("postIdx",archiveData.postIdx.toString())
+//                //해당 postIdx로 가득찬 DetailActivity 열기
+//
+//            }
 
         }
     }
