@@ -1,17 +1,17 @@
 package com.example.spectory
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.spectory.databinding.FragmentMyprofileBinding
 
-class MyprofileFragment: Fragment(), ProfileView {
+class MyprofileFragment: Fragment(), ProfileView, DeleteUserView {
     lateinit var binding: FragmentMyprofileBinding
 
     override fun onCreateView(
@@ -27,9 +27,34 @@ class MyprofileFragment: Fragment(), ProfileView {
         binding.myprofileEditBtn.setOnClickListener {
             changeSettingFragment()
         }
+
+        binding.myprofileMoreBtn.setOnClickListener {
+            //drawer 열기
+            var popup = PopupMenu(this.context, it)
+            var menuInflater = MenuInflater(this.context)
+            menuInflater?.inflate(R.menu.profile_menu,popup.menu)
+            popup.show()
+            popup.setOnMenuItemClickListener {
+                when(it.itemId){
+                    R.id.reset -> {
+                        //내 정보 초기화
+                        true
+                    }
+                    R.id.delete -> {
+                        //회원 탈퇴
+                        deleteUser()
+                        true
+                    } else -> {
+                        false
+                    }
+                }
+            }
+
+
+        }
+
         return binding.root
     }
-
 
     private fun changeSettingFragment(){
         (context as MainActivity).supportFragmentManager.beginTransaction()
@@ -40,6 +65,15 @@ class MyprofileFragment: Fragment(), ProfileView {
         val spf = this.activity?.getSharedPreferences("auth", AppCompatActivity.MODE_PRIVATE)
 
         return spf!!.getInt("userIdx",0)
+    }
+
+    private fun getToken(): TokenData{
+        val spf = this.activity?.getSharedPreferences("auth", AppCompatActivity.MODE_PRIVATE)
+
+        val tokenData = TokenData("")
+        tokenData.token = spf!!.getString("jwt","")!!
+        Log.d("TOKEN",tokenData.token)
+        return tokenData
     }
 
     private fun myprofile() {
@@ -64,4 +98,29 @@ class MyprofileFragment: Fragment(), ProfileView {
     override fun onProfileFailure() {
 
     }
+
+    private fun deleteUser() {
+        val authService = AuthService()
+        authService.setDeleteUserView(this)
+
+        authService.deleteUser(getUserIdx(),getToken())
+    }
+
+
+    override fun onDeleteSuccess(status: Int) {
+        when(status){
+            200 -> {
+                Toast.makeText(this.context,"탈퇴 되었습니다",Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(context, LoginActivity::class.java)
+                startActivity(intent)
+            }
+        }
+    }
+
+    override fun onDeleteFailure() {
+        TODO("Not yet implemented")
+    }
+
+
 }

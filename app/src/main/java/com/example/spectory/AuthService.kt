@@ -14,6 +14,7 @@ class AuthService {
     private lateinit var writeView: WriteView
     private lateinit var archiveView: ArchiveView
     private lateinit var detailView: DetailView
+    private lateinit var deleteUserView: DeleteUserView
 
     fun setSignUpView(signUpView: SignUpView){
         this.signUpView = signUpView
@@ -39,6 +40,9 @@ class AuthService {
         this.detailView = detailView
     }
 
+    fun setDeleteUserView(deleteUserView: DeleteUserView){
+        this.deleteUserView = deleteUserView
+    }
 
     //회원가입
     fun signUp(user: UserData){
@@ -160,6 +164,26 @@ class AuthService {
 
             override fun onFailure(call: Call<DetailResponse>, t: Throwable) {
                 Log.d("DETAIL/FAILURE",t.message.toString())
+            }
+
+        } )
+    }
+
+    //회원탈퇴
+    fun deleteUser(userIdx: Int,token:TokenData){
+        val authService = getRetrofit().create(AuthRetrofitInterface::class.java)
+        authService.deleteUser(userIdx,token).enqueue(object: Callback<AuthResponse> {
+            override fun onResponse(call: Call<AuthResponse>, response: Response<AuthResponse>) {
+                Log.d("DELETE_USER", response.toString())
+                val resp: AuthResponse = response.body()!!
+                when(val status = resp.status){
+                    200 -> deleteUserView.onDeleteSuccess(status)
+                    else -> deleteUserView.onDeleteFailure()
+                }
+            }
+
+            override fun onFailure(call: Call<AuthResponse>, t: Throwable) {
+                Log.d("DELETE_USER/FAILURE",t.message.toString())
             }
 
         } )
