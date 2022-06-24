@@ -68,11 +68,8 @@ class LoginActivity: AppCompatActivity(), LoginView {
         val editor = spf.edit()
 
         editor.putString("jwt",jwt)
+        Log.d("TOKEN/JWT",jwt)
         editor.putInt("userIdx",userIdx)
-        //editor.putString("nickname",nickname)
-
-        //Log.d("USERIDX",userIdx.toString())
-
         editor.apply()
     }
 }
