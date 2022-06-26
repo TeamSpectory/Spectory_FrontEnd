@@ -50,12 +50,6 @@ class HomeFragment : Fragment(), ArchiveView, ProfileView {
         return spf!!.getInt("userIdx", 0)
     }
 
-    //닉네임 받아오기
-//    private fun getNickname(): String {
-//        val spf = this.activity?.getSharedPreferences("auth", AppCompatActivity.MODE_PRIVATE)
-//
-//        return spf!!.getString("nickname", "")!!
-//    }
 
     override fun onArchiveSuccess(resp: List<PostResponse>) {
         for (i in resp) {
@@ -85,6 +79,43 @@ class HomeFragment : Fragment(), ArchiveView, ProfileView {
         binding.homeRvPerson.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.homePersonTv.text = "> 나의 성격 및 가치관 ("+personDatas.size+")"
+
+        //리사이클러뷰의 각각 아이템을 클릭했을 때
+        jobAdapter.setMyItemClickListener(object: HomeAdapter.MyItemClickListener{
+            override fun onItemClick(archive: PostResponse) {
+                //DetailAcitivy 열기
+                //로그 찍어서 postIdx 받아오기
+                Log.d("postIdx",archive.postIdx.toString())
+                //해당 postIdx로 가득찬 DetailActivity 열기
+                val intent = Intent(context, DetailActivity::class.java)
+                intent.putExtra("postIdx",archive.postIdx.toString())
+                startActivity(intent)
+            }
+        })
+        //리사이클러뷰의 각각 아이템을 클릭했을 때
+        togetherAdapter.setMyItemClickListener(object: HomeAdapter.MyItemClickListener{
+            override fun onItemClick(archive: PostResponse) {
+                //DetailAcitivy 열기
+                //로그 찍어서 postIdx 받아오기
+                Log.d("postIdx",archive.postIdx.toString())
+                //해당 postIdx로 가득찬 DetailActivity 열기
+                val intent = Intent(context, DetailActivity::class.java)
+                intent.putExtra("postIdx",archive.postIdx.toString())
+                startActivity(intent)
+            }
+        })
+        //리사이클러뷰의 각각 아이템을 클릭했을 때
+        personAdapter.setMyItemClickListener(object: HomeAdapter.MyItemClickListener{
+            override fun onItemClick(archive: PostResponse) {
+                //DetailAcitivy 열기
+                //로그 찍어서 postIdx 받아오기
+                Log.d("postIdx",archive.postIdx.toString())
+                //해당 postIdx로 가득찬 DetailActivity 열기
+                val intent = Intent(context, DetailActivity::class.java)
+                intent.putExtra("postIdx",archive.postIdx.toString())
+                startActivity(intent)
+            }
+        })
 
     }
 
