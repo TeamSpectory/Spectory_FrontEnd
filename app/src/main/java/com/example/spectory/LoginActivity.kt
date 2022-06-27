@@ -69,6 +69,7 @@ class LoginActivity: AppCompatActivity(), LoginView {
 
         editor.putString("jwt",jwt)
         Log.d("TOKEN/JWT",jwt)
+        Log.d("userid",userIdx.toString())
         editor.putInt("userIdx",userIdx)
         editor.apply()
     }

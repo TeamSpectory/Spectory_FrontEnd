@@ -3,13 +3,13 @@ package com.example.spectory
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.spectory.databinding.ArchivingListBinding
 import com.example.spectory.databinding.JobListBinding
 
 class HomeAdapter(private val homeDataList: ArrayList<PostResponse>): RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
     interface MyItemClickListener{
         fun onItemClick(archive: PostResponse)
+        fun onDeleteClick(archive: PostResponse)
     }
 
     private lateinit var mItemClickListener: MyItemClickListener
@@ -28,6 +28,9 @@ class HomeAdapter(private val homeDataList: ArrayList<PostResponse>): RecyclerVi
         holder.bind(homeDataList[position])
         holder.itemView.setOnClickListener {
             mItemClickListener.onItemClick(homeDataList[position])
+        }
+        holder.binding.jobListDelete.setOnClickListener {
+            mItemClickListener.onDeleteClick(homeDataList[position])
         }
     }
 
