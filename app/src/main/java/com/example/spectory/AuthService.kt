@@ -15,6 +15,7 @@ class AuthService {
     private lateinit var archiveView: ArchiveView
     private lateinit var detailView: DetailView
     private lateinit var deleteUserView: DeleteUserView
+    private lateinit var deletePostView: DeletePostView
 
     fun setSignUpView(signUpView: SignUpView){
         this.signUpView = signUpView
@@ -42,6 +43,10 @@ class AuthService {
 
     fun setDeleteUserView(deleteUserView: DeleteUserView){
         this.deleteUserView = deleteUserView
+    }
+
+    fun setDeletePostView(deletePostView: DeletePostView){
+        this.deletePostView = deletePostView
     }
 
     //회원가입
@@ -188,4 +193,25 @@ class AuthService {
 
         } )
     }
+
+    //게시글 삭제
+    fun deletePost(postIdx: Int, token: TokenData){
+        val authService = getRetrofit().create(AuthRetrofitInterface::class.java)
+        authService.deletePost(postIdx,token).enqueue(object: Callback<AuthResponse> {
+            override fun onResponse(call: Call<AuthResponse>, response: Response<AuthResponse>) {
+                Log.d("DELETE_POST", response.toString())
+                val resp: AuthResponse = response.body()!!
+                when(val status = resp.status){
+                    200 -> deletePostView.onDeletePostSuccess(status)
+                    else -> deletePostView.onDeletePostFailure()
+                }
+            }
+
+            override fun onFailure(call: Call<AuthResponse>, t: Throwable) {
+                Log.d("DELETE_POST/FAILURE",t.message.toString())
+            }
+
+        } )
+    }
+
 }

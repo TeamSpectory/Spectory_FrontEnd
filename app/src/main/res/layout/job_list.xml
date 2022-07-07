@@ -36,7 +36,7 @@
         android:textColor="#000000"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="@+id/job_list_name"
-        app:layout_constraintTop_toBottomOf="@+id/imageView22" />
+        app:layout_constraintTop_toBottomOf="@+id/job_list_edit" />
 
     <TextView
         android:id="@+id/job_list_name"
@@ -69,16 +69,16 @@
     </androidx.cardview.widget.CardView>
 
     <ImageView
-        android:id="@+id/imageView22"
+        android:id="@+id/job_list_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView23"
-        app:layout_constraintEnd_toStartOf="@+id/imageView23"
-        app:layout_constraintTop_toTopOf="@+id/imageView23"
+        app:layout_constraintBottom_toBottomOf="@+id/job_list_delete"
+        app:layout_constraintEnd_toStartOf="@+id/job_list_delete"
+        app:layout_constraintTop_toTopOf="@+id/job_list_delete"
         app:srcCompat="@drawable/edit_icon" />
 
     <ImageView
-        android:id="@+id/imageView23"
+        android:id="@+id/job_list_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

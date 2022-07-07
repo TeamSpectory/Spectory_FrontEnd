@@ -3,10 +3,20 @@ package com.example.spectory
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.spectory.databinding.ArchivingListBinding
 import com.example.spectory.databinding.JobListBinding
 
 class HomeAdapter(private val homeDataList: ArrayList<PostResponse>): RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+
+    interface MyItemClickListener{
+        fun onItemClick(archive: PostResponse)
+        fun onDeleteClick(archive: PostResponse)
+    }
+
+    private lateinit var mItemClickListener: MyItemClickListener
+
+    fun setMyItemClickListener(itemClickListener: MyItemClickListener){
+        mItemClickListener = itemClickListener
+    }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): HomeAdapter.ViewHolder {
         val binding: JobListBinding = JobListBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
@@ -16,6 +26,12 @@ class HomeAdapter(private val homeDataList: ArrayList<PostResponse>): RecyclerVi
 
     override fun onBindViewHolder(holder: HomeAdapter.ViewHolder, position: Int) {
         holder.bind(homeDataList[position])
+        holder.itemView.setOnClickListener {
+            mItemClickListener.onItemClick(homeDataList[position])
+        }
+        holder.binding.jobListDelete.setOnClickListener {
+            mItemClickListener.onDeleteClick(homeDataList[position])
+        }
     }
 
     override fun getItemCount(): Int {
