@@ -1,9 +1,11 @@
 package com.example.spectory
 
 import android.util.Log
+import android.widget.Toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.File
 import kotlin.math.log
 import kotlin.math.sign
 
@@ -114,16 +116,29 @@ class AuthService {
     }
 
     //게시글 쓰기
-    fun write(post: WriteData){
+    fun writeImage(type: String,title: String, startDate: String,endDate: String,situation:String,action:String,learned:String,rates:Int,tags:String,userIdx:Int,image: File){
         val authService = getRetrofit().create(AuthRetrofitInterface::class.java)
-        authService.write(post).enqueue(object: Callback<WriteResponse> {
+        authService.writeImage(
+            FormDataUtil.getBody("type", type),
+            FormDataUtil.getBody("title",title),
+            FormDataUtil.getBody("startDate",startDate),
+            FormDataUtil.getBody("endDate",endDate),
+            FormDataUtil.getBody("situation",situation),
+            FormDataUtil.getBody("action",action),
+            FormDataUtil.getBody("learned",learned),
+            FormDataUtil.getBody("rates",rates),
+            FormDataUtil.getBody("tags",tags),
+            FormDataUtil.getBody("userIdx",userIdx),
+            FormDataUtil.getImageBody("image",image)
+        ).enqueue(object: Callback<WriteResponse> {
             override fun onResponse(call: Call<WriteResponse>, response: Response<WriteResponse>) {
                 Log.d("WRITE", response.toString())
-//                val resp: AuthResponse = response.body()!!
-//                when(val status = resp.status){
-//                    200 -> writeView.onWriteSuccess(status,resp.data!!)
-//                    else -> writeView.onWriteFailure()
-//                }
+                Log.d("WRITE", response.errorBody().toString())
+                val resp: WriteResponse = response.body()!!
+                when(val status = resp.status){
+                    200 -> writeView.onWriteSuccess(status)
+                    else -> writeView.onWriteFailure()
+                }
             }
 
             override fun onFailure(call: Call<WriteResponse>, t: Throwable) {
@@ -139,16 +154,16 @@ class AuthService {
     //전체 글 보기
     fun archiving(userIdx: Int){
         val authService = getRetrofit().create(AuthRetrofitInterface::class.java)
-        authService.archiving(userIdx).enqueue(object: Callback<List<PostResponse>> {
-            override fun onResponse(call: Call<List<PostResponse>>, response: Response<List<PostResponse>>) {
+        authService.archiving(userIdx).enqueue(object: Callback<PostResponse> {
+            override fun onResponse(call: Call<PostResponse>, response: Response<PostResponse>) {
                 Log.d("ARCHIVE", response.toString())
-                val resp: List<PostResponse> = response.body()!!
+                val resp: PostResponse = response.body()!!
                 archiveView.onArchiveSuccess(resp)
                 Log.d("아아아악",resp.toString())
             }
 
-            override fun onFailure(call: Call<List<PostResponse>>, t: Throwable) {
-                Log.d("PROFILE/FAILURE",t.message.toString())
+            override fun onFailure(call: Call<PostResponse>, t: Throwable) {
+                Log.d("ARCHIVE/FAILURE",t.message.toString())
             }
 
         } )

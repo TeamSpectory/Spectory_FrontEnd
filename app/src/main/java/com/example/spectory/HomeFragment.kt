@@ -16,9 +16,9 @@ import com.example.spectory.databinding.FragmentHomeBinding
 class HomeFragment : Fragment(), ArchiveView, ProfileView, DeletePostView {
 
     lateinit var binding: FragmentHomeBinding
-    private var jobDatas = ArrayList<PostResponse>()
-    private var togetherDatas = ArrayList<PostResponse>()
-    private var personDatas = ArrayList<PostResponse>()
+    private var jobDatas = ArrayList<PostList>()
+    private var togetherDatas = ArrayList<PostList>()
+    private var personDatas = ArrayList<PostList>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -52,11 +52,14 @@ class HomeFragment : Fragment(), ArchiveView, ProfileView, DeletePostView {
     }
 
 
-    override fun onArchiveSuccess(resp: List<PostResponse>) {
-        for (i in resp) {
-            if (i.type == 1) {
+    override fun onArchiveSuccess(resp: PostResponse) {
+        Log.d("ARCHIVE","홈 아카이빙 성공")
+
+        for (i in resp.data){
+            if (i.type == 1){
                 jobDatas.add(i)
-            } else if (i.type == 2) {
+            }
+            else if (i.type == 2) {
                 togetherDatas.add(i)
             } else if (i.type == 3) {
                 personDatas.add(i)
@@ -83,7 +86,7 @@ class HomeFragment : Fragment(), ArchiveView, ProfileView, DeletePostView {
 
         //리사이클러뷰의 각각 아이템을 클릭했을 때
         togetherAdapter.setMyItemClickListener(object: HomeAdapter.MyItemClickListener{
-            override fun onItemClick(archive: PostResponse) {
+            override fun onItemClick(archive: PostList) {
                 //DetailAcitivy 열기
                 //로그 찍어서 postIdx 받아오기
                 Log.d("postIdx",archive.postIdx.toString())
@@ -93,10 +96,10 @@ class HomeFragment : Fragment(), ArchiveView, ProfileView, DeletePostView {
                 startActivity(intent)
             }
 
-            override fun onDeleteClick(archive: PostResponse) {
+            override fun onDeleteClick(archive: PostList) {
                 Log.d("게시글 삭제","게시글이 삭제되었습니다")
                 //게시글 삭제 서버 연동
-                //deletePost()
+                deletePost()
             }
         })
 

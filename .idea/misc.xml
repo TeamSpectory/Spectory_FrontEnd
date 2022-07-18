@@ -37,6 +37,7 @@
         <entry key="app/src/main/res/drawable/ic_view_inside_rectangle.xml" value="0.289" />
         <entry key="app/src/main/res/drawable/ic_view_rectangle_top.xml" value="0.289" />
         <entry key="app/src/main/res/drawable/splash_screen.xml" value="0.1145" />
+        <entry key="app/src/main/res/font/font_coiny.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.2915298461914063" />
         <entry key="app/src/main/res/layout/activity_edit.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />

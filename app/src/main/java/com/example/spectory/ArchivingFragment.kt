@@ -14,7 +14,7 @@ import com.example.spectory.databinding.FragmentArchivingBinding
 class ArchivingFragment: Fragment(), ArchiveView {
 
     lateinit var binding : FragmentArchivingBinding
-    private var archiveDatas = ArrayList<PostResponse>()
+    private var archiveDatas = ArrayList<PostList>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,9 +43,12 @@ class ArchivingFragment: Fragment(), ArchiveView {
         return spf!!.getInt("userIdx",0)
     }
 
-    override fun onArchiveSuccess(resp: List<PostResponse>) {
+    override fun onArchiveSuccess(resp: PostResponse) {
+        Log.d("ARCHIVE","아카이빙 화면 아카이빙 성공")
+
         Log.d("히히히히ㅣ히히히ㅣ히",resp.toString())
-        for (i in resp){
+
+        for (i in resp.data){
             Log.d("으악앙가아아아아악",i.toString())
             archiveDatas.add(i)
             Log.d("되라되라되라되러ㅏ",archiveDatas.toString())
@@ -56,7 +59,7 @@ class ArchivingFragment: Fragment(), ArchiveView {
 
         //리사이클러뷰의 각각 아이템을 클릭했을 때
         archiveAdapter.setMyItemClickListener(object: ArchiveAdapter.MyItemClickListener{
-            override fun onItemClick(archive: PostResponse) {
+            override fun onItemClick(archive: PostList) {
                 //DetailAcitivy 열기
                 //로그 찍어서 postIdx 받아오기
                 Log.d("postIdx",archive.postIdx.toString())
