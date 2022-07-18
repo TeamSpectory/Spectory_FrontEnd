@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.spectory.databinding.ActivityDetailBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -23,6 +24,10 @@ class DetailActivity: AppCompatActivity(), DetailView {
 
         detail(postIdx!!.toInt())
 
+        binding.writeOkBtn.setOnClickListener {
+            finish()
+        }
+
         setContentView(binding.root)
     }
 
@@ -39,6 +44,9 @@ class DetailActivity: AppCompatActivity(), DetailView {
                 binding.detailTag3.text = resp.detailData.tags.split("/")[2]
                 //별 정리
                 star(resp.detailData.rates)
+                Glide.with(binding.detailImg.context)
+                    .load(resp.detailData.picture)
+                    .into(binding.detailImg)
             }
         }
     }

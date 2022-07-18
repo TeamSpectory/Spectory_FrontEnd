@@ -205,7 +205,7 @@
                 android:background="@drawable/ic_rectangle_35">
 
                 <ImageView
-                    android:id="@+id/imageView7"
+                    android:id="@+id/detail_img"
                     android:layout_width="20dp"
                     android:layout_height="match_parent"
                     app:layout_constraintBottom_toBottomOf="parent"

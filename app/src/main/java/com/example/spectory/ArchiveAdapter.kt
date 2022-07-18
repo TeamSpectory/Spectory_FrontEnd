@@ -1,19 +1,22 @@
 package com.example.spectory
 
-import android.content.Context
-import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.util.Base64
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
+import androidx.core.text.parseAsHtml
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.spectory.databinding.ArchivingListBinding
-import kotlin.coroutines.coroutineContext
+import java.io.InputStream
+import java.lang.Exception
 
-class ArchiveAdapter(private val archiveDataList: ArrayList<PostResponse>): RecyclerView.Adapter<ArchiveAdapter.ViewHolder>() {
+class ArchiveAdapter(private val archiveDataList: ArrayList<PostList>): RecyclerView.Adapter<ArchiveAdapter.ViewHolder>() {
 
     interface MyItemClickListener{
-        fun onItemClick(archive: PostResponse)
+        fun onItemClick(archive: PostList)
     }
 
     private lateinit var mItemClickListener: MyItemClickListener
@@ -41,9 +44,12 @@ class ArchiveAdapter(private val archiveDataList: ArrayList<PostResponse>): Recy
 
     inner class ViewHolder(val binding: ArchivingListBinding): RecyclerView.ViewHolder(binding.root){
 
-        fun bind(archiveData: PostResponse){
+        fun bind(archiveData: PostList){
             binding.arcListDate.text = archiveData.startDate+"~"+archiveData.endDate
-            //binding.arcListImg.setImageResource(archiveData.picture!!)
+
+            Glide.with(binding.arcListImg.context)
+                .load(archiveData.picture)
+                .into(binding.arcListImg)
 
             //type 별로 체크 표시
             if(archiveData.type == 1){
@@ -63,7 +69,6 @@ class ArchiveAdapter(private val archiveDataList: ArrayList<PostResponse>): Recy
             binding.arcListTag1.text=archiveData.tags.split("/")[0]
             binding.arcListTag2.text=archiveData.tags.split("/")[1]
             binding.arcListTag3.text=archiveData.tags.split("/")[2]
-
 
         }
     }
